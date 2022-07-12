@@ -1,9 +1,19 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import static java.lang.Integer.parseInt;
+
 public class Main {
 
     public static void main(String[] args) {
+        SongList sl = new SongList();
+        sl.list();
+        ArrayList<String> test = new ArrayList<String>();
+
         int choice = -5;
+        Scanner sc = new Scanner(System.in);
 
         Display.welcomeMsg();
         Display.mainMenu();
@@ -11,7 +21,8 @@ public class Main {
 
         switch (choice) {
             case 1:
-                System.out.println("List of songs");
+                sl.listDisplay(sl.songs);
+                sl.playSong(parseInt(sc.nextLine()));
                 break;
             case 2:
                 System.out.println("Artists");
@@ -31,7 +42,6 @@ public class Main {
             default:
                 System.out.println("Incorrect choice: Please enter a valid choice");
         }
-
     }
 }
 

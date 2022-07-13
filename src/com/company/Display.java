@@ -9,7 +9,7 @@ public class Display {
         System.out.println("------------------------");
     }
 
-    public static void mainMenu(){
+    public static void mainMenu() {
         System.out.println(" Main menu options:");
         System.out.println(" 1. Songs");
         System.out.println(" 2. Artists");

@@ -22,7 +22,7 @@ public class Main {
         switch (choice) {
             case 1:
                 sl.listDisplay(sl.songs);
-                sl.playSong(parseInt(sc.nextLine()));
+                sl.playSong(sc.nextInt());
                 break;
             case 2:
                 System.out.println("Artists");
@@ -34,7 +34,9 @@ public class Main {
                 System.out.println("Genres");
                 break;
             case 5:
-                System.out.println("Search");
+                System.out.print("Write the name of the song and press enter: ");
+                test = sl.songSearch(sc.nextLine());
+                sl.findSongNumber(test, parseInt(sc.nextLine()));
                 break;
             case 6:
                 System.out.println("Good Bye");

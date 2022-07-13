@@ -62,7 +62,28 @@ public class SongList {
         }
     }
 
+    public ArrayList<String> songSearch(String keyword) {
+        ArrayList<String> updatedSongs = new ArrayList<String>();
+        for (int i = 0; i < songs.size(); i++) {
+            if (songs.get(i).contains(keyword)) {
+                updatedSongs.add((songs.get(i)));
+            }
+        }
+        if (updatedSongs.size() != 0) {
+            listDisplay(updatedSongs);
+        } else {
+            System.out.println("No songs found");
+        }
+        return updatedSongs;
+    }
 
-
+    public void findSongNumber(ArrayList<String> T, int selection) {
+        String song = T.get(selection - 1);
+        for (int i = 0; i < songs.size(); i++) {
+            if (song.equals(songs.get(i))) {
+                playSong(i + 1);
+            }
+        }
+    }
 
 }

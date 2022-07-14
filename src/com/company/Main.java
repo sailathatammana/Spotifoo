@@ -6,16 +6,11 @@ import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
 public class Main {
-
-    public static void main(String[] args) {
-        SongList sl = new SongList();
-        sl.list();
+    static SongList sl = new SongList();
+    public static void extracted() {
         ArrayList<String> test = new ArrayList<String>();
-
         int choice = -5;
         Scanner sc = new Scanner(System.in);
-
-        Display.welcomeMsg();
         Display.mainMenu();
         choice = Validation.readAndValidateChoice();
 
@@ -23,6 +18,9 @@ public class Main {
             case 1:
                 sl.listDisplay(sl.getSongs());
                 int number = Validation.validateChoice(sl.getSongs());
+                if(number == 0){
+                    extracted();
+                }
                 sl.playSong(number);
                 break;
             case 2:
@@ -46,5 +44,12 @@ public class Main {
                 System.out.println("Incorrect choice: Please enter a valid choice");
         }
     }
+    public static void main(String[] args) {
+        sl.list();
+        Display.welcomeMsg();
+        extracted();
+    }
+
+
 }
 

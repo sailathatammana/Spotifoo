@@ -44,6 +44,7 @@ public class SongList {
         for (int i = 1; i <= list.size(); i++) {
             System.out.println("[" + i + "]" + " " + list.get(i - 1));
         }
+        System.out.println("[0] Back to main Menu");
         System.out.print(" Choose an option and press enter: ");
     }
 
@@ -56,7 +57,10 @@ public class SongList {
             clipartName = clipArt.get(selection - 1);
             File song = new File("D:\\SDA\\GitHub\\Spotifoo\\assets\\songs\\" + songName);
             File image = new File("D:\\SDA\\GitHub\\Spotifoo\\assets\\albums\\" + clipartName);
-            System.out.println(song);
+            if (!image.exists()) {
+                image = new File("D:\\SDA\\GitHub\\Spotifoo\\assets\\no-picture.png");
+            }
+                System.out.println(song);
             System.out.println(image);
             Desktop d = Desktop.getDesktop();
             d.open(song);

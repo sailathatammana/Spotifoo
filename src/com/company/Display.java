@@ -1,7 +1,5 @@
 package com.company;
 
-import java.util.Scanner;
-
 public class Display {
 
     public static void welcomeMsg() {

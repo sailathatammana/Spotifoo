@@ -38,7 +38,7 @@ public class Validation {
             try {
                 inputValue = sc.nextLine();
                 choice = Integer.parseInt(inputValue);
-                while (choice > sl.size() || choice <= 0) {
+                while (choice > sl.size() || choice < 0) {
                     System.out.println(" Please enter a number between 1 to " + sl.size() +" !");
                     System.out.print(" Choose an option and press enter: ");
                     inputValue = sc.nextLine();

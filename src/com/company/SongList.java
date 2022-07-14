@@ -17,6 +17,10 @@ public class SongList {
     static ArrayList<String> songFile = new ArrayList<String>();
     static ArrayList<String> clipArt = new ArrayList<String>();
 
+    public static ArrayList<String> getSongs() {
+        return songs;
+    }
+
     public static void list() {
         try {
             List<String> test = null;
@@ -40,7 +44,7 @@ public class SongList {
         for (int i = 1; i <= list.size(); i++) {
             System.out.println("[" + i + "]" + " " + list.get(i - 1));
         }
-        System.out.print(" Choose an option and press enter: " + "\n");
+        System.out.print(" Choose an option and press enter: ");
     }
 
 
@@ -58,7 +62,7 @@ public class SongList {
             d.open(song);
             d.open(image);
         } catch (Exception evt) {
-            System.out.println("Error");
+            System.out.println("Could not play the Song !");
         }
     }
 

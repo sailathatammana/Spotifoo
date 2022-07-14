@@ -21,8 +21,9 @@ public class Main {
 
         switch (choice) {
             case 1:
-                sl.listDisplay(sl.songs);
-                sl.playSong(sc.nextInt());
+                sl.listDisplay(sl.getSongs());
+                int number = Validation.validateChoice(sl.getSongs());
+                sl.playSong(number);
                 break;
             case 2:
                 System.out.println("Artists");

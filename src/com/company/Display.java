@@ -17,4 +17,16 @@ public class Display {
         System.out.println(" 6. Quit\n");
         System.out.print(" Choose an option and press enter: ");
     }
+    public static void cls()
+    {
+        try
+        {
+            new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
+        }catch(Exception E)
+        {
+            System.out.println(E);
+        }
+    }
+
+
 }

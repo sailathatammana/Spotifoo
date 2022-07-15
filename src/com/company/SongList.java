@@ -21,6 +21,10 @@ public class SongList {
         return songs;
     }
 
+    public static ArrayList<String> getArtists() {
+        return artists;
+    }
+
     public static void list() {
         try {
             List<String> test = null;
@@ -48,6 +52,27 @@ public class SongList {
         System.out.print(" Choose an option and press enter: ");
     }
 
+    public static ArrayList<String> removeDuplicate(ArrayList<String> originalList) {
+        ArrayList<String> updatedList = new ArrayList<String>();
+        for (int i = 0; i < originalList.size(); i++) {
+            if (!updatedList.contains(originalList.get(i))) {
+                updatedList.add((originalList.get(i)));
+            }
+        }
+        return updatedList;
+    }
+
+    public ArrayList<String> displaySongs(ArrayList<String> deduplicateList, int selection, ArrayList<String> splitList) {
+        ArrayList<String> songNameList = new ArrayList<String>();
+        String filter = deduplicateList.get(selection - 1);
+        for (int i = 0; i < splitList.size(); i++) {
+            if (filter.equals(splitList.get(i))) {
+                songNameList.add(getSongs().get(i));
+            }
+        }
+        listDisplay(songNameList);
+        return songNameList;
+    }
 
     public void playSong(int selection) {
         String songName = null;
@@ -60,7 +85,7 @@ public class SongList {
             if (!image.exists()) {
                 image = new File("D:\\SDA\\GitHub\\Spotifoo\\assets\\no-picture.png");
             }
-                System.out.println(song);
+            System.out.println(song);
             System.out.println(image);
             Desktop d = Desktop.getDesktop();
             d.open(song);

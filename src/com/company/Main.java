@@ -20,6 +20,7 @@ public class Main {
                 int number = Validation.validateChoice(sl.getSongs());
                 if(number == 0){
                     extracted();
+                    System.exit(1);
                 }
                 sl.playSong(number);
                 break;

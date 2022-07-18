@@ -23,10 +23,10 @@ public class Main {
                 filterBy(sl.getArtists());
                 break;
             case 3:
-                System.out.println("Albums");
+                filterBy(sl.getAlbums());
                 break;
             case 4:
-                System.out.println("Genres");
+                filterBy(sl.getGenres());
                 break;
             case 5:
                 System.out.print("Write the name of the song and press enter: ");
@@ -57,7 +57,7 @@ public class Main {
         ArrayList<String> songsDisplay;
         sl.listDisplay(sl.removeDuplicate(filterList));
         selection = getSelection(sl.removeDuplicate(filterList));
-        songsDisplay = sl.displaySongs(sl.removeDuplicate(sl.getArtists()), selection, filterList);
+        songsDisplay = sl.displaySongs(sl.removeDuplicate(filterList), selection, filterList);
         selection = getSelection(songsDisplay);
         sl.findSongNumber(songsDisplay, selection);
     }

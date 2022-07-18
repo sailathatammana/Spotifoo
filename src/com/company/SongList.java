@@ -25,10 +25,26 @@ public class SongList {
         return artists;
     }
 
+    public static ArrayList<String> getAlbums() {
+        return albums;
+    }
+
+    public static ArrayList<String> getGenres() {
+        return genres;
+    }
+
+    public static ArrayList<String> getSongFile() {
+        return songFile;
+    }
+
+    public static ArrayList<String> getClipArt() {
+        return clipArt;
+    }
+
     public static void list() {
         try {
             List<String> test = null;
-            File file = new File("D:/SDA/GitHub/Spotifoo/assets/data.txt");
+            File file = new File("assets/data.txt");
             Scanner scan = new Scanner(file);
             while (scan.hasNextLine()) {
                 test = Arrays.asList(scan.nextLine().split(","));
@@ -78,12 +94,12 @@ public class SongList {
         String songName = null;
         String clipartName = null;
         try {
-            songName = songFile.get(selection - 1);
-            clipartName = clipArt.get(selection - 1);
-            File song = new File("D:\\SDA\\GitHub\\Spotifoo\\assets\\songs\\" + songName);
-            File image = new File("D:\\SDA\\GitHub\\Spotifoo\\assets\\albums\\" + clipartName);
+            songName = getSongFile().get(selection - 1);
+            clipartName = getClipArt().get(selection - 1);
+            File song = new File("assets\\songs\\" + songName);
+            File image = new File("assets\\albums\\" + clipartName);
             if (!image.exists()) {
-                image = new File("D:\\SDA\\GitHub\\Spotifoo\\assets\\no-picture.png");
+                image = new File("assets\\no-picture.png");
             }
             System.out.println(song);
             System.out.println(image);

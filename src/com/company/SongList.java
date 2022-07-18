@@ -114,7 +114,7 @@ public class SongList {
     public ArrayList<String> songSearch(String keyword) {
         ArrayList<String> updatedSongs = new ArrayList<String>();
         for (int i = 0; i < songs.size(); i++) {
-            if (songs.get(i).contains(keyword)) {
+            if ((songs.get(i).toLowerCase()).contains(keyword.toLowerCase())) {
                 updatedSongs.add((songs.get(i)));
             }
         }

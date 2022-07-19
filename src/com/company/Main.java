@@ -6,6 +6,9 @@ import java.util.Scanner;
 public class Main {
     static SongList sl = new SongList();
 
+    /**
+     * This used to run by the choice selected by the user.
+     */
     public static void extracted() {
         ArrayList<String> songsDisplay = new ArrayList<String>();
         int choice = -5;
@@ -43,6 +46,12 @@ public class Main {
         }
     }
 
+    /**
+     * This method checks whether the entered number is valid or not in the given list.
+     *
+     * @param filterListDisplay list to select the choice
+     * @return choice selected by the user
+     */
     private static int getSelection(ArrayList<String> filterListDisplay) {
         int number = Validation.validateChoice(filterListDisplay);
         if (number == 0) {
@@ -52,6 +61,11 @@ public class Main {
         return number;
     }
 
+    /**
+     * The method used to filter the list based on the user selection
+     *
+     * @param filterList list which the user want to filter
+     */
     private static void filterBy(ArrayList<String> filterList) {
         int selection;
         ArrayList<String> songsDisplay;

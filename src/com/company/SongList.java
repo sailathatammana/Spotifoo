@@ -46,17 +46,17 @@ public class SongList {
      */
     public static void list() {
         try {
-            List<String> test = null;
+            List<String> splitList = null;
             File file = new File("assets/data.txt");
             Scanner scan = new Scanner(file);
             while (scan.hasNextLine()) {
-                test = Arrays.asList(scan.nextLine().split(","));
-                songs.add(test.get(0));
-                artists.add(test.get(1));
-                albums.add(test.get(2));
-                genres.add(test.get(3));
-                songFile.add(test.get(4));
-                clipArt.add(test.get(5));
+                splitList = Arrays.asList(scan.nextLine().split(","));
+                songs.add(splitList.get(0));
+                artists.add(splitList.get(1));
+                albums.add(splitList.get(2));
+                genres.add(splitList.get(3));
+                songFile.add(splitList.get(4));
+                clipArt.add(splitList.get(5));
             }
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
@@ -72,7 +72,7 @@ public class SongList {
         for (int i = 1; i <= list.size(); i++) {
             System.out.println("[" + i + "]" + " " + list.get(i - 1));
         }
-        System.out.println("[0] Back to main Menu");
+        System.out.println("[0] Back to main menu");
         System.out.print(" Choose an option and press enter: ");
     }
 
@@ -146,9 +146,9 @@ public class SongList {
      */
     public ArrayList<String> songSearch(String keyword) {
         ArrayList<String> updatedSongs = new ArrayList<String>();
-        for (int i = 0; i < songs.size(); i++) {
-            if ((songs.get(i).toLowerCase()).contains(keyword.toLowerCase())) {
-                updatedSongs.add((songs.get(i)));
+        for (int i = 0; i < getSongs().size(); i++) {
+            if ((getSongs().get(i).toLowerCase()).contains(keyword.toLowerCase())) {
+                updatedSongs.add((getSongs().get(i)));
             }
         }
         if (updatedSongs.size() != 0) {
@@ -167,8 +167,8 @@ public class SongList {
      */
     public void findSongNumber(ArrayList<String> filterList, int selection) {
         String song = filterList.get(selection - 1);
-        for (int i = 0; i < songs.size(); i++) {
-            if (song.equals(songs.get(i))) {
+        for (int i = 0; i < getSongs().size(); i++) {
+            if (song.equals(getSongs().get(i))) {
                 playSong(i + 1);
             }
         }

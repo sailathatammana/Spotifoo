@@ -69,6 +69,7 @@ public class SongList {
      * @param list List selected by the user
      */
     public void listDisplay(ArrayList<String> list) {
+        Display.cls();
         for (int i = 1; i <= list.size(); i++) {
             System.out.println("[" + i + "]" + " " + list.get(i - 1));
         }

@@ -1,10 +1,15 @@
 package com.company;
 
+import com.company.songs.SongPlay;
+import com.company.songs.SongSearch;
+import com.company.songs.Songs;
+import com.company.songs.SongsList;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    static SongList sl = new SongList();
+    static Songs songs = new Songs();
 
     /**
      * This used to run by the choice selected by the user.
@@ -18,25 +23,24 @@ public class Main {
 
         switch (choice) {
             case 1:
-                sl.listDisplay(sl.getSongs());
-                int selection = getSelection(sl.getSongs());
-                sl.playSong(selection);
+                Display.listDisplay(Songs.getSongs());
+                int selection = getSelection(Songs.getSongs());
+                SongPlay.playSong(selection);
                 break;
             case 2:
-                filterBy(sl.getArtists());
+                filterBy(Songs.getArtists());
                 break;
             case 3:
-                filterBy(sl.getAlbums());
+                filterBy(Songs.getAlbums());
                 break;
             case 4:
-                filterBy(sl.getGenres());
+                filterBy(Songs.getGenres());
                 break;
             case 5:
                 System.out.print("Write the name of the song and press enter: ");
-                songsDisplay = sl.songSearch(sc.nextLine());
+                songsDisplay = SongSearch.search(sc.nextLine());
                 selection = getSelection(songsDisplay);
-                sl.findSongNumber(songsDisplay, selection);
-
+                SongPlay.findSongNumber(songsDisplay, selection);
                 break;
             case 6:
                 System.out.println("Good Bye");
@@ -70,19 +74,16 @@ public class Main {
     private static void filterBy(ArrayList<String> filterList) {
         int selection;
         ArrayList<String> songsDisplay;
-        sl.listDisplay(sl.removeDuplicate(filterList));
-        selection = getSelection(sl.removeDuplicate(filterList));
-        songsDisplay = sl.displaySongs(sl.removeDuplicate(filterList), selection, filterList);
+        Display.listDisplay(SongsList.removeDuplicate(filterList));
+        selection = getSelection(SongsList.removeDuplicate(filterList));
+        songsDisplay = SongsList.displaySongs(SongsList.removeDuplicate(filterList), selection, filterList);
         selection = getSelection(songsDisplay);
-        sl.findSongNumber(songsDisplay, selection);
+        SongPlay.findSongNumber(songsDisplay, selection);
     }
 
     public static void main(String[] args) {
-        sl.list();
+        songs.list();
         Display.welcomeMsg();
         extracted();
     }
-
-
 }
-

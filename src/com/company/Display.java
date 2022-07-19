@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Display {
 
     public static void welcomeMsg() {
@@ -19,18 +21,27 @@ public class Display {
     }
 
     /**
+     * This method will display the list of songs, artists, albums, genres to the user
+     *
+     * @param list List selected by the user
+     */
+    public static void listDisplay(ArrayList<String> list) {
+        Display.cls();
+        for (int i = 1; i <= list.size(); i++) {
+            System.out.println("[" + i + "]" + " " + list.get(i - 1));
+        }
+        System.out.println("[0] Back to main Menu");
+        System.out.print(" Choose an option and press enter: ");
+    }
+
+    /**
      * This method is used to clear the command prompt window when user selects an option.
      */
-    public static void cls()
-    {
-        try
-        {
-            new ProcessBuilder("cmd","/c","cls").inheritIO().start().waitFor();
-        }catch(Exception E)
-        {
+    public static void cls() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception E) {
             System.out.println(E);
         }
     }
-
-
 }

@@ -55,6 +55,7 @@ public class Main {
     private static int getSelection(ArrayList<String> filterListDisplay) {
         int number = Validation.validateChoice(filterListDisplay);
         if (number == 0) {
+            Display.cls();
             extracted();
             System.exit(1);
         }

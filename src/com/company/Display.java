@@ -17,6 +17,10 @@ public class Display {
         System.out.println(" 6. Quit\n");
         System.out.print(" Choose an option and press enter: ");
     }
+
+    /**
+     * This method is used to clear the command prompt window when user selects an option.
+     */
     public static void cls()
     {
         try

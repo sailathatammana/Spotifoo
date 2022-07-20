@@ -8,6 +8,6 @@ public class Main {
     public static void main(String[] args) {
         songs.list();
         Display.welcomeMsg();
-        ChooseOption.extracted();
+        ChooseOption.mainDisplay();
     }
 }

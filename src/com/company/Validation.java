@@ -28,6 +28,23 @@ public class Validation {
         return choice;
     }
 
+    public static String validateString() {
+        Scanner sc = new Scanner(System.in);
+        String inputValue = null;
+        int check = 0;
+        while (check != 1) {
+            try {
+                inputValue = sc.next();
+                Integer.parseInt(inputValue);
+                System.out.println(" That's not a String!");
+                System.out.print(" Enter a string value: ");
+            } catch (NumberFormatException e) {
+                check = 1;
+            }
+        }
+        return inputValue;
+    }
+
     public static int validateChoice(ArrayList<String> sl) {
         Scanner sc = new Scanner(System.in);
         String inputValue;

@@ -6,9 +6,10 @@ import java.util.*;
 
 public class ChooseOption {
 
-    public static void extracted() {
+    public static void mainDisplay() {
         ArrayList<String> songsDisplay = new ArrayList<String>();
         int choice = -5;
+        String keyword;
         Scanner sc = new Scanner(System.in);
         Display.mainMenu();
         choice = Validation.readAndValidateChoice();
@@ -30,7 +31,8 @@ public class ChooseOption {
                 break;
             case 5:
                 System.out.print("Write the name of the song and press enter: ");
-                songsDisplay = SongSearch.search(sc.nextLine());
+                keyword= Validation.validateString();
+                songsDisplay = SongSearch.search(keyword);
                 selection = getSelection(songsDisplay);
                 SongPlay.findSongNumber(songsDisplay, selection);
                 break;
@@ -52,7 +54,7 @@ public class ChooseOption {
         int number = Validation.validateChoice(filterListDisplay);
         if (number == 0) {
             Display.cls();
-            extracted();
+            mainDisplay();
             System.exit(1);
         }
         return number;

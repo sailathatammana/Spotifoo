@@ -23,7 +23,8 @@ public class SongSearch {
         if (updatedSongs.size() != 0) {
             Display.listDisplay(updatedSongs);
         } else {
-            System.out.println("No songs found");
+            System.out.println("No songs found related to " + keyword);
+            System.exit(1);
         }
         return updatedSongs;
     }

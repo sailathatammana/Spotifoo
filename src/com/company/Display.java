@@ -1,6 +1,6 @@
 package com.company;
 
-import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Display {
 
@@ -9,7 +9,7 @@ public class Display {
         System.out.println("------------------------");
     }
 
-    public static void mainMenu(){
+    public static void mainMenu() {
         System.out.println(" Main menu options:");
         System.out.println(" 1. Songs");
         System.out.println(" 2. Artists");
@@ -20,21 +20,27 @@ public class Display {
         System.out.print(" Choose an option and press enter: ");
     }
 
-    public static int readAndValidateChoice(){
-        Scanner sc = new Scanner(System.in);
-        int choice = 50;
-        do {
-
-            if(choice <= 0)
-                System.out.println("Please enter a number between 1 to 4!");
-
-            while (!sc.hasNextInt()) {
-                System.out.println("That's not a number!");
-                sc.next();
-            }
-            choice = sc.nextInt();
-        } while (choice <= 0);
-        return choice;
+    /**
+     * This method will display the list of songs, artists, albums, genres to the user
+     *
+     * @param list List selected by the user
+     */
+    public static void listDisplay(ArrayList<String> list) {
+        for (int i = 1; i <= list.size(); i++) {
+            System.out.println("[" + i + "]" + " " + list.get(i - 1));
+        }
+        System.out.println("[0] Back to main Menu");
+        System.out.print(" Choose an option and press enter: ");
     }
 
+    /**
+     * This method is used to clear the command prompt window when user selects an option.
+     */
+    public static void cls() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception E) {
+            System.out.println(E);
+        }
+    }
 }

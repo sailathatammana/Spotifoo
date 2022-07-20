@@ -15,7 +15,7 @@ public class SongSearch {
      */
     public static ArrayList<String> search(String keyword) {
         Display.cls();
-        ArrayList<String> updatedSongs = new ArrayList<String>();
+        ArrayList<String> updatedSongs = new ArrayList<>();
         System.out.println("Songs menu :");
         for (int i = 0; i < getSongs().size(); i++) {
             if ((getSongs().get(i).toLowerCase()).contains(keyword.toLowerCase())) {

@@ -6,12 +6,12 @@ import java.util.*;
 
 public class Songs {
 
-    static ArrayList<String> songs = new ArrayList<String>();
-    static ArrayList<String> artists = new ArrayList<String>();
-    static ArrayList<String> albums = new ArrayList<String>();
-    static ArrayList<String> genres = new ArrayList<String>();
-    static ArrayList<String> songFile = new ArrayList<String>();
-    static ArrayList<String> clipArt = new ArrayList<String>();
+    static ArrayList<String> songs = new ArrayList<>();
+    static ArrayList<String> artists = new ArrayList<>();
+    static ArrayList<String> albums = new ArrayList<>();
+    static ArrayList<String> genres = new ArrayList<>();
+    static ArrayList<String> songFile = new ArrayList<>();
+    static ArrayList<String> clipArt = new ArrayList<>();
 
     public static ArrayList<String> getSongs() {
         return songs;
@@ -42,7 +42,7 @@ public class Songs {
      */
     public void list() {
         try {
-            List<String> splitList = null;
+            List<String> splitList;
             File file = new File("assets/data.txt");
             Scanner scan = new Scanner(file);
             while (scan.hasNextLine()) {

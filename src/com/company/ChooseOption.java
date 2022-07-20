@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class ChooseOption {
 
     public static void mainDisplay() {
-        ArrayList<String> songsDisplay = new ArrayList<String>();
-        int choice = -5;
+        ArrayList<String> songsDisplay;
+        int choice;
         String keyword;
         int select;
 

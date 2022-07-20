@@ -15,7 +15,7 @@ public class SongsList {
      * @return Deduplicate list
      */
     public static ArrayList<String> removeDuplicate(ArrayList<String> originalList) {
-        ArrayList<String> updatedList = new ArrayList<String>();
+        ArrayList<String> updatedList = new ArrayList<>();
         for (int i = 0; i < originalList.size(); i++) {
             if (!updatedList.contains(originalList.get(i))) {
                 updatedList.add((originalList.get(i)));
@@ -34,7 +34,7 @@ public class SongsList {
      */
     public static ArrayList<String> displaySongs(ArrayList<String> deduplicateList, int selection, ArrayList<String> splitList) {
         Display.cls();
-        ArrayList<String> songNameList = new ArrayList<String>();
+        ArrayList<String> songNameList = new ArrayList<>();
         String filter = deduplicateList.get(selection - 1);
         System.out.println("Songs menu :");
         for (int i = 0; i < splitList.size(); i++) {

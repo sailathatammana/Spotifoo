@@ -13,8 +13,8 @@ public class SongPlay {
      * @param selection option to play the song
      */
     public static void playSong(int selection) {
-        String songName = null;
-        String clipartName = null;
+        String songName;
+        String clipartName;
         try {
             songName = getSongFile().get(selection - 1);
             clipartName = getClipArt().get(selection - 1);

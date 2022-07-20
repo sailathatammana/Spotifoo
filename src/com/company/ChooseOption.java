@@ -39,11 +39,7 @@ public class ChooseOption {
                 break;
             case 5:
                 System.out.println("Search for a song");
-                System.out.print("Write the name of the song and press enter: ");
-                keyword = FilterValidation.validateString();
-                songsDisplay = SongSearch.search(keyword);
-                select = Filter.selection(songsDisplay);
-                SongPlay.findSongNumber(songsDisplay, select);
+                Filter.searchBy();
                 break;
             case 6:
                 System.out.println("Good Bye");

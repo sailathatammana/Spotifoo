@@ -36,4 +36,18 @@ public class Filter {
         selection = selection(songsDisplay);
         SongPlay.findSongNumber(songsDisplay, selection);
     }
+
+    /**
+     * This method search the song using keyword provided by user and plays the song
+     */
+    public static void searchBy() {
+        String keyword;
+        ArrayList<String> songsDisplay;
+        int select;
+        System.out.print("Write the name of the song and press enter: ");
+        keyword = FilterValidation.validateString();
+        songsDisplay = SongSearch.search(keyword);
+        select = selection(songsDisplay);
+        SongPlay.findSongNumber(songsDisplay, select);
+    }
 }

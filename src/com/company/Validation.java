@@ -34,7 +34,12 @@ public class Validation {
         int check = 0;
         while (check != 1) {
             try {
-                inputValue = sc.next();
+                inputValue = sc.nextLine();
+                while (inputValue.startsWith(" ")) {
+                    System.out.println(" That's not a String!");
+                    System.out.print(" Enter a string value: ");
+                    inputValue = sc.nextLine();
+                }
                 Integer.parseInt(inputValue);
                 System.out.println(" That's not a String!");
                 System.out.print(" Enter a string value: ");

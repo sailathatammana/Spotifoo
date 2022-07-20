@@ -33,8 +33,10 @@ public class SongsList {
      * @return List of songs by the option selected by user
      */
     public static ArrayList<String> displaySongs(ArrayList<String> deduplicateList, int selection, ArrayList<String> splitList) {
+        Display.cls();
         ArrayList<String> songNameList = new ArrayList<String>();
         String filter = deduplicateList.get(selection - 1);
+        System.out.println("Songs menu :");
         for (int i = 0; i < splitList.size(); i++) {
             if (filter.equals(splitList.get(i))) {
                 songNameList.add(getSongs().get(i));

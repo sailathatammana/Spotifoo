@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         songs.list();
-        Display.welcomeMsg();
+        Display.cls();
         ChooseOption.mainDisplay();
     }
 }

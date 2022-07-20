@@ -10,28 +10,33 @@ public class ChooseOption {
         ArrayList<String> songsDisplay = new ArrayList<String>();
         int choice = -5;
         String keyword;
-        Scanner sc = new Scanner(System.in);
+        Display.welcomeMsg();
         Display.mainMenu();
         choice = Validation.readAndValidateChoice();
-
+        Display.cls();
         switch (choice) {
             case 1:
+                System.out.println("Songs menu :");
                 Display.listDisplay(Songs.getSongs());
                 int selection = getSelection(Songs.getSongs());
                 SongPlay.playSong(selection);
                 break;
             case 2:
+                System.out.println("Artists available :");
                 filterBy(Songs.getArtists());
                 break;
             case 3:
+                System.out.println("Albums available :");
                 filterBy(Songs.getAlbums());
                 break;
             case 4:
+                System.out.println("Genres available :");
                 filterBy(Songs.getGenres());
                 break;
             case 5:
+                System.out.println("Search for a song");
                 System.out.print("Write the name of the song and press enter: ");
-                keyword= Validation.validateString();
+                keyword = Validation.validateString();
                 songsDisplay = SongSearch.search(keyword);
                 selection = getSelection(songsDisplay);
                 SongPlay.findSongNumber(songsDisplay, selection);

@@ -14,9 +14,9 @@ public class SearchFilter {
     /**
      * This method search the song using keyword provided by user and plays the song
      */
-    public static void searchBy(ArrayList<String> list) {
+    public static void searchBy() {
         keyword = FilterValidation.validateString();
-        songsDisplay = SearchSong.search(keyword, list);
+        songsDisplay = SearchSong.search(keyword);
         select = Filter.selection(songsDisplay);
         SongPlay.findSongNumber(songsDisplay, select);
     }

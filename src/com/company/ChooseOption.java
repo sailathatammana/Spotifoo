@@ -1,6 +1,6 @@
 package com.company;
 
-import com.company.search.Search;
+import com.company.search.SearchFilter;
 import com.company.songs.*;
 import com.company.validations.*;
 
@@ -35,7 +35,8 @@ public class ChooseOption {
                 Filter.filterBy(Songs.getGenres());
                 break;
             case 5:
-                Search.search();
+                System.out.print("Search for a song by song name, artist, album :");
+                SearchFilter.searchBy();
                 break;
             case 6:
                 System.out.println("Good Bye");

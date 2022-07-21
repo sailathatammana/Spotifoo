@@ -1,17 +1,12 @@
 package com.company.search;
 
 import com.company.Display;
-import com.company.Filter;
-import com.company.songs.SongPlay;
 import com.company.songs.Songs;
 import com.company.validations.Validation;
-
-import java.util.ArrayList;
 
 public class Search {
     public static void search() {
         int choice;
-        int select;
         SearchDisplay.mainMenu();
         choice = Validation.readAndValidateChoice();
         Display.cls();

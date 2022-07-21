@@ -4,8 +4,6 @@ import com.company.search.Search;
 import com.company.songs.*;
 import com.company.validations.*;
 
-import java.util.ArrayList;
-
 public class ChooseOption {
 
     public static void mainDisplay() {

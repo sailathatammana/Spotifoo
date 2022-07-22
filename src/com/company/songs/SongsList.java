@@ -3,6 +3,7 @@ package com.company.songs;
 import com.company.Display;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static com.company.songs.Songs.*;
 
@@ -21,6 +22,7 @@ public class SongsList {
                 updatedList.add((originalList.get(i)));
             }
         }
+        Collections.sort(updatedList);
         return updatedList;
     }
 

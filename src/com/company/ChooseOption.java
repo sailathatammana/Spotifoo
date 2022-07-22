@@ -1,16 +1,13 @@
 package com.company;
 
+import com.company.search.SearchFilter;
 import com.company.songs.*;
 import com.company.validations.*;
-
-import java.util.ArrayList;
 
 public class ChooseOption {
 
     public static void mainDisplay() {
-        ArrayList<String> songsDisplay;
         int choice;
-        String keyword;
         int select;
 
         Display.welcomeMsg();
@@ -38,8 +35,8 @@ public class ChooseOption {
                 Filter.filterBy(Songs.getGenres());
                 break;
             case 5:
-                System.out.println("Search for a song");
-                Filter.searchBy();
+                System.out.print("Search for a song by song name, artist, album :");
+                SearchFilter.searchBy();
                 break;
             case 6:
                 System.out.println("Good Bye");

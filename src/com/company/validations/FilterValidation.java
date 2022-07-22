@@ -15,11 +15,12 @@ public class FilterValidation {
                     System.out.print(" Enter a string value: ");
                     inputValue = sc.nextLine();
                 }
-                Integer.parseInt(inputValue);
+                /*Integer.parseInt(inputValue);
                 System.out.println(" That's not a String!");
-                System.out.print(" Enter a string value: ");
-            } catch (NumberFormatException e) {
+                System.out.print(" Enter a string value: ");*/
                 check = 1;
+            } catch (NumberFormatException e) {
+                System.out.println(e);
             }
         }
         return inputValue;

@@ -23,11 +23,14 @@ public class SongPlay {
             if (!image.exists()) {
                 image = new File("assets\\no-picture.png");
             }
-            System.out.println(song);
-            System.out.println(image);
             Desktop d = Desktop.getDesktop();
-            d.open(song);
-            d.open(image);
+            if (song.exists()) {
+                System.out.println("Playing a song!");
+                d.open(song);
+                d.open(image);
+            } else {
+                System.out.println("Could not play the Song !");
+            }
         } catch (Exception evt) {
             System.out.println("Could not play the Song !");
         }

@@ -38,7 +38,7 @@ public class SearchSong {
         if (songsList.size() != 0) {
             Display.listDisplay(songsList);
         } else {
-            System.out.println("Nothing found related to " + keyword);
+            System.out.println("No songs found related to " + keyword);
             System.exit(1);
         }
         return songsList;

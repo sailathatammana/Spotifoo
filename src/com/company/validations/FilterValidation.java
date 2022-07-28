@@ -23,7 +23,7 @@ public class FilterValidation {
         return inputValue;
     }
 
-    public static int validateChoice(ArrayList<String> sl) {
+    public static int validateChoice(ArrayList<String> list) {
         Scanner sc = new Scanner(System.in);
         String inputValue;
         int choice = 50;
@@ -32,8 +32,8 @@ public class FilterValidation {
             try {
                 inputValue = sc.nextLine();
                 choice = Integer.parseInt(inputValue);
-                while (choice > sl.size() || choice < 0) {
-                    System.out.println(" Please enter a number between 1 to " + sl.size() + " !");
+                while (choice > list.size() || choice < 0) {
+                    System.out.println(" Please enter a number between 0 to " + list.size() + " !");
                     System.out.print(" Choose an option and press enter: ");
                     inputValue = sc.nextLine();
                     choice = Integer.parseInt(inputValue);

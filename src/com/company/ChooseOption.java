@@ -10,7 +10,6 @@ public class ChooseOption {
         int choice;
         int select;
 
-        Display.welcomeMsg();
         Display.mainMenu();
         choice = Validation.readAndValidateChoice();
         Display.cls();

@@ -38,10 +38,13 @@ public class Display {
      */
     public static void cls() {
         try {
-            if (System.getProperty("os.name").contains("Windows"))
+            if (System.getProperty("os.name").contains("Windows")) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            else
+                Display.welcomeMsg();
+            } else {
                 Runtime.getRuntime().exec("clear");
+                Display.welcomeMsg();
+            }
         } catch (Exception E) {
             System.out.println(E);
         }

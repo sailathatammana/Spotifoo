@@ -1,5 +1,5 @@
 # Spotifoo #
-It is a console based Java program that allows you to stream music instead of downloading it. The features of the application are explained below.
+Spotifoo is a console based Java application that allows you to stream music instead of downloading it. The features of the application are explained below.
 
 ## A brief overview of Application ##
 1. The Spotifoo application uses a command-line interface.
@@ -16,7 +16,7 @@ It is a console based Java program that allows you to stream music instead of do
 
 ##### Using an IDE and GIT
 
-1. In your IDE navigate to the directory where you would like to store the application.
+1. In your IDE, navigate to the directory where you would like to store the application.
 
 2. Clone the project repo and pull a copy of the repo to your local machine using the following command.
 
@@ -25,3 +25,16 @@ It is a console based Java program that allows you to stream music instead of do
 3. Navigate to project folder, src, com, company and Main.java.
 
 4. Run the Main.java file using the IDE's run command.
+
+##### Using a terminal and GIT
+
+1. Navigate to the directory where you would like to store the application.
+
+2. Clone the project repo and pull a copy of the repo to your local machine using the following command.
+
+   `$ git clone https://github.com/sailathatammana/Spotifoo`
+
+3. Open terminal, build the application and generate a jar file 
+
+4. Run using "`java -jar Spotifoo.jar`"
+

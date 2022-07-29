@@ -1,7 +1,6 @@
 package com.company.search;
 
 import com.company.Display;
-import com.company.songs.SongsList;
 import com.company.validations.FilterValidation;
 
 import java.util.ArrayList;
@@ -38,4 +37,3 @@ public class SearchSong {
         return updatedList;
     }
 }
-

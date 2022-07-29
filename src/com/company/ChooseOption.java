@@ -17,8 +17,6 @@ public class ChooseOption {
             case 1:
                 System.out.println("Songs menu :");
                 Display.listDisplay(Songs.getSongs());
-                //select = Filter.selection(Songs.getSongs());
-                //SongPlay.playSong(select);*/
                 SongPlay.playSong(Songs.getSongs());
                 break;
             case 2:

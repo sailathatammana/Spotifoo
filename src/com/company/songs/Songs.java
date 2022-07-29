@@ -55,7 +55,7 @@ public class Songs {
                 clipArt.add(splitList.get(5));
             }
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            System.out.println("File not found!");
         }
     }
 }

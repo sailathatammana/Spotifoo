@@ -8,7 +8,6 @@ public class ChooseOption {
 
     public static void mainDisplay() {
         int choice;
-        int select;
 
         Display.mainMenu();
         choice = Validation.readAndValidateChoice();
@@ -18,8 +17,7 @@ public class ChooseOption {
             case 1:
                 System.out.println("Songs menu :");
                 Display.listDisplay(Songs.getSongs());
-                select = Filter.selection(Songs.getSongs());
-                SongPlay.playSong(select);
+                SongPlay.playSong(Songs.getSongs());
                 break;
             case 2:
                 System.out.println("Artists available :");

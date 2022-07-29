@@ -33,7 +33,6 @@ public class Filter {
         Display.listDisplay(SongsList.removeDuplicate(filterList));
         selection = selection(SongsList.removeDuplicate(filterList));
         songsDisplay = SongsList.displaySongs(SongsList.removeDuplicate(filterList), selection, filterList);
-        selection = selection(songsDisplay);
-        SongPlay.findSongNumber(songsDisplay, selection);
+        SongPlay.playSong(songsDisplay);
     }
 }

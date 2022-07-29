@@ -32,7 +32,6 @@ public class ChooseOption {
                 Filter.filterBy(Songs.getGenres());
                 break;
             case 5:
-                System.out.print("Search for a song by song name, artist, album :");
                 SearchFilter.searchBy();
                 break;
             case 6:

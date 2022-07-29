@@ -42,7 +42,7 @@ public class Display {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
                 Display.welcomeMsg();
             } else {
-                Runtime.getRuntime().exec("clear");
+                new ProcessBuilder("clear").inheritIO().start().waitFor();
                 Display.welcomeMsg();
             }
         } catch (Exception E) {
